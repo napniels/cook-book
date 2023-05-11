@@ -1,0 +1,35 @@
+<div class="max-w-5xl mx-auto relative mt-16 content">
+    {{ svg src="/assets/site/scratches" class="absolute text-gray-800 mt-8 top-0 left-0 w-20 hidden md:block" }}
+    <article class="lg:py-32 max-w-2xl mx-auto">
+        <h1>{{ title }}</h1>
+        <div class="bg-gray-800 inline-block text-sm mb-16 pr-4 pl-16 -ml-16 uppercase tracking-widest text-white py-1 rounded-r-full">
+            Recept
+            {{ if topics }}
+                voor {{ topics }}<a href="{{ url }}" class="text-teal-light no-underline hover:text-white">{{ title }}</a>{{ unless last }}, {{ /unless }}{{ /topics }}
+            {{ /if }}
+            sinds {{ date format="j M, Y" }}
+        </div>
+        <div class="content">
+            {{ image }}
+                <img src={{ url }}>
+            {{ /image }}
+            <h3>{{ content | widont }}</h3>
+            <h4>Ingrediënten:</h4>
+            <ul>
+            {{ foreach:ingredients }}
+                <li>{{ value }}</li>
+            {{ /foreach:ingredients }}
+            </ul>
+            <h4>Hoe te bereiden:</h4>
+            <ul>
+            {{ foreach:steps as="time|step" }}
+                {{ if time }}
+                    <li>{{ time }} - {{ step }}</li>
+                {{ else }}
+                    <li>{{ step }}</li>
+                {{ /if }}
+            {{ /foreach:steps }}
+            </ul>
+        </div>
+    </article>
+</div>

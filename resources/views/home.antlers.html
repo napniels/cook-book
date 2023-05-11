@@ -1,0 +1,87 @@
+<div class="max-w-5xl mx-auto relative py-16 lg:pt-4 lg:pb-4">
+    <article class="content">
+        <h1 class="text-gray-900">{{ content }}</h1>
+        <p class="font-medium text-lg text-teal mt-5">{{ subtitle }}</p>
+
+    </article>
+</div>
+<div>
+
+</div>
+<div class="max-w-5xl mx-auto relative py-16 lg:pt-4 lg:pb-16">
+    <div class="max-w-5xl mx-auto relative py-16 lg:pt-4 lg:pb-16">
+        <p class="font-medium text-lg mb-5">Onze laatste recepten:</p>
+        <div class="flex flex-wrap items-center justify-center pb-5">
+
+
+            {{ collection:articles limit="3" as="articles" }}
+            {{ if no_results }}
+            <h2 class="text-3xl italic tracking-tight">Feel the rhythm! Feel the rhyme! Get on up, it's writing time!
+                Cool writings!</h2>
+            {{ /if }}
+
+            {{ articles }}
+            <div class="text-center flex-1 mx-auto items-center" style="flex: 0 0 33.333333%;">
+
+                <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow  ">
+                    <a href="#">
+                        {{ image }}
+                        <img
+                                src={{
+                                url
+                                }}
+                                style="height: 100px; width:100px;"
+                                class="w-full h-32 sm:h-48 object-cover mx-auto rounded-t"
+                        >
+                        {{ /image }}
+                    </a>
+                    <div class="p-5">
+                        <a href="#">
+                            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-700">{{ title | widont }}</h5>
+                        </a>
+                        <p class="mb-3 font-normal text-gray-700">{{ cooking_time }}</p>
+                        <a
+                                href="#"
+                                style="background-color: rgb(0 132 131) !important; "
+                                class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-teal rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                        >
+                            Read more
+                            <svg
+                                    aria-hidden="true"
+                                    class="w-4 h-4 ml-2 -mr-1"
+                                    fill="currentColor"
+                                    viewBox="0 0 20 20"
+                                    xmlns="http://www.w3.org/2000/svg"
+                            >
+                                <path
+                                        fill-rule="evenodd"
+                                        d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
+                                        clip-rule="evenodd"
+                                ></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <!--                <div class="mx-auto items-center">-->
+                <!--                                    {{ image }}-->
+                <!--                                        <img src={{ url }} style="height: 100px; width:100px;" class="w-full h-32 sm:h-48 object-cover mx-auto rounded" >-->
+                <!--                                    {{ /image }}-->
+
+                <!--                    <div class="mt-2">-->
+                <!--                        <a href="{{ url }}" class="text-lg hover:text-teal tracking-tight leading-tight font-bold" >-->
+                <!--                            {{ title | widont }}-->
+                <!--                        </a>-->
+
+                <!--                        <p class="mt-1">{{ cooking_time }}</p>-->
+                <!--                    </div>-->
+                <!--                </div>-->
+            </div>
+
+            {{ /articles }}
+            {{ /collection:articles }}
+        </div>
+
+    </div>
+    <p class="font-medium text-lg text-teal mt-5" style="text-decoration: underline"><a href="/recipes">Meer recepten
+        >></a></p>
+</div>
