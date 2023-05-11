@@ -3,7 +3,7 @@
   Statamic Starter Kit: Cool Writings
 </h1>
 
-![Statamic 4.0+](https://img.shields.io/badge/Statamic-3.2+-FF269E?style=for-the-badge&link=https://statamic.com)
+![Statamic 4.0+](https://img.shields.io/badge/Statamic-4.0+-FF269E?style=for-the-badge&link=https://statamic.com)
 <!-- /statamic:hide -->
 
 # Kookgenot
