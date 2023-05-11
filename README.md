@@ -1,6 +1,6 @@
 <!-- statamic:hide --><p align="center"><img src="https://statamic.com/assets/branding/Statamic-Logo-Rad.png" width="100" alt="Statamic Logo" /></p>
 <h1 align="center">
-  Statamic Starter Kit: Cool Writings
+  Statamic 4 project
 </h1>
 
 ![Statamic 4.0+](https://img.shields.io/badge/Statamic-4.0+-FF269E?style=for-the-badge&link=https://statamic.com)
