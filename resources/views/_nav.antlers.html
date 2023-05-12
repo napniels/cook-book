@@ -1,8 +1,8 @@
 <nav class="flex items-center justify-between lg:justify-start flex-wrap py-10 max-w-5xl mx-auto">
     <div class="text-md antialiased font-medium">
-        <a href="/" class="block text-xl lg:inline-block mr-12 font-black">
+        <a href="/" class="block text-xl lg:inline-block mr-12 font-black text-teal">
             {{ settings:logo }}
-            <img src="{{ url }}" alt="{{ alt }}" style="height: 2.5rem !important;" class="lg:inline-block"/>
+            <img src="{{ url }}" alt="{{ alt }}" style="height: 2.5rem !important; filter: invert(36%) sepia(12%) saturate(5935%) hue-rotate(145deg) brightness(101%) contrast(88%);" class="lg:inline-block"/>
             {{ /settings:logo }}
 
 
@@ -25,7 +25,7 @@
     </div>
     <div class="w-full lg:w-auto lg:flex items-center" @click.outside="showMobileNav = false" x-show="showMobileNav">
         {{ nav }}
-        <a href="{{ url }}" class="block {{ is_current || is_parent ?= 'font-medium text-gray-800' }} mt-4 lg:inline-block text-gray-600 hover:text-gray-800 lg:mt-0 mr-12">
+        <a href="{{ url }}" class="block {{ is_current || is_parent ?= 'font-medium text-teal' }} mt-4 lg:inline-block text-gray-600 hover:text-gray-800 lg:mt-0 mr-12">
             {{ title }}
         </a>
         {{ /nav }}

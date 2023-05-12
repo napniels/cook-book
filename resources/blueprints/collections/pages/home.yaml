@@ -1,36 +1,72 @@
 title: Home
-sections:
+tabs:
   main:
     display: Main
-    fields:
+    sections:
       -
-        handle: title
-        field:
-          character_limit: 0
-          type: text
-          localizable: false
-          display: Title
+        fields:
+          -
+            handle: title
+            field:
+              type: text
+              required: true
+              character_limit: 0
+              display: Title
+              validate:
+                - required
+          -
+            handle: subtitle
+            field:
+              character_limit: 0
+              type: text
+              display: Subtitle
+          -
+            handle: content
+            field:
+              restrict: false
+              automatic_line_breaks: true
+              automatic_links: false
+              escape_markup: true
+              smartypants: false
+              type: markdown
+              display: Content
+          -
+            handle: template
+            field:
+              type: template
+              display: Template
+          -
+            handle: photo
+            field:
+              mode: list
+              container: assets
+              restrict: false
+              allow_uploads: true
+              show_filename: true
+              show_set_alt: true
+              type: assets
+              display: Photo
+              icon: assets
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              hide_display: false
+  sidebar:
+    display: Sidebar
+    sections:
       -
-        handle: subtitle
-        field:
-          character_limit: 0
-          type: text
-          localizable: false
-          display: Subtitle
-      -
-        handle: content
-        field:
-          restrict: false
-          automatic_line_breaks: true
-          automatic_links: false
-          escape_markup: true
-          smartypants: false
-          type: markdown
-          localizable: false
-          display: Content
-      -
-        handle: template
-        field:
-          type: template
-          localizable: false
-          display: Template
+        fields:
+          -
+            handle: slug
+            field:
+              type: slug
+              localizable: true
+          -
+            handle: parent
+            field:
+              type: entries
+              collections:
+                - pages
+              max_items: 1
+              listable: false
+              localizable: true
